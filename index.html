@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KGL List</title>
+  <meta name="description" content="Kompletna i aktualna lista najlepszych executorów Windows - Internal i External." />
+  <script type="module" crossorigin src="./assets/index-CgfWq1Fl.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-pp1CQmwh.css">
+</head>
+
+<body>
+  <div id="app">
+    <div id="toast-container"></div>
+    <header>
+      <h1>KGL</h1>
+      <p class="subtitle">Najbardziej szczegółowe zestawienie narzędzi Windows. Kategorie, statystyki sUNC/UNC, status
+        detekcji i wiele więcej.</p>
+    </header>
+
+    <div class="dashboard-layout">
+      <aside class="filter-sidebar">
+        <div class="filter-header">
+          <h3>Filtry</h3>
+          <button id="clear-all" class="clear-btn">Wyczyść wszystko</button>
+        </div>
+
+        <div class="filter-section">
+          <label>Sortuj według</label>
+          <select id="sort-by" class="filter-select">
+            <option value="name">Nazwa (A-Z)</option>
+            <option value="unc">Najwyższe UNC</option>
+            <option value="sunc">Najwyższe sUNC</option>
+          </select>
+        </div>
+
+        <div class="filter-section">
+          <label>Cena</label>
+          <div class="filter-group" data-filter="pricing">
+            <button class="pill-btn" data-value="free">Free</button>
+            <button class="pill-btn" data-value="paid">Paid</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label>System Kluczy</label>
+          <div class="filter-group" data-filter="keysystem">
+            <button class="pill-btn" data-value="keyless">Keyless</button>
+            <button class="pill-btn" data-value="keysystem">Key System</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label>Platforma</label>
+          <div class="platform-grid" data-filter="platform">
+            <button class="platform-btn" data-value="Windows">
+              <span class="icon">🪟</span> Windows
+            </button>
+            <button class="platform-btn" data-value="Mac">
+              <span class="icon">🍎</span> Mac
+            </button>
+            <button class="platform-btn" data-value="Android">
+              <span class="icon">🤖</span> Android
+            </button>
+            <button class="platform-btn" data-value="iOS">
+              <span class="icon">📱</span> iOS
+            </button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label>Typ</label>
+          <div class="filter-group" data-filter="type">
+            <button class="pill-btn" data-value="internal">Internal</button>
+            <button class="pill-btn" data-value="external">External</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label>Detekcja</label>
+          <div class="filter-group" data-filter="detection">
+            <button class="pill-btn" data-value="Undetected">Undetected</button>
+            <button class="pill-btn" data-value="Detected">Detected</button>
+            <button class="pill-btn" data-value="Bypass">Bypass</button>
+          </div>
+        </div>
+
+        <div class="filter-section">
+          <label>Status</label>
+          <div class="filter-group" data-filter="status">
+            <button class="pill-btn" data-value="updated">Updated</button>
+            <button class="pill-btn" data-value="outdated">Not Updated</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="content-area">
+        <div class="search-container">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="executor-search" placeholder="Szukaj executora po nazwie..." autocomplete="off">
+          </div>
+          <div id="results-count" class="results-count">Znaleziono: 12 executorów</div>
+        </div>
+
+        <div id="executors-container" class="executors-grid">
+          <!-- JS will render cards here -->
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+
+</html>
