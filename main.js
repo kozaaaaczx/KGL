@@ -35,7 +35,7 @@ function copyToClipboard(text) {
 // Funkcja parsująca dane z pliku JSON na format aplikacji
 async function loadData() {
   try {
-    const response = await fetch('./Nowy Dokument tekstowy.json');
+    const response = await fetch('./data.json');
     const rawData = await response.json();
     
     executors = rawData.map(item => ({
