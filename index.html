@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KGL List</title>
-  <meta name="description" content="Kompletna i aktualna lista najlepszych executorów Windows - Internal i External." />
+  <meta name="description" content="Complete and up-to-date list of top Windows executors - Internal and External." />
 </head>
 
 <body>
@@ -14,28 +14,27 @@
     <div id="toast-container"></div>
     <header>
       <h1>KGL</h1>
-      <p class="subtitle">Najbardziej szczegółowe zestawienie narzędzi Windows. Kategorie, statystyki sUNC/UNC, status
-        detekcji i wiele więcej.</p>
+      <p class="subtitle">The most detailed list of Windows executors. Categories, sUNC/UNC stats, detection status, and more.</p>
     </header>
 
     <div class="dashboard-layout">
       <aside class="filter-sidebar">
         <div class="filter-header">
-          <h3>Filtry</h3>
-          <button id="clear-all" class="clear-btn">Wyczyść wszystko</button>
+          <h3>Filters</h3>
+          <button id="clear-all" class="clear-btn">Clear All</button>
         </div>
 
         <div class="filter-section">
-          <label>Sortuj według</label>
+          <label>Sort By</label>
           <select id="sort-by" class="filter-select">
-            <option value="name">Nazwa (A-Z)</option>
-            <option value="unc">Najwyższe UNC</option>
-            <option value="sunc">Najwyższe sUNC</option>
+            <option value="name">Name (A-Z)</option>
+            <option value="unc">Highest UNC</option>
+            <option value="sunc">Highest sUNC</option>
           </select>
         </div>
 
         <div class="filter-section">
-          <label>Cena</label>
+          <label>Pricing</label>
           <div class="filter-group" data-filter="pricing">
             <button class="pill-btn" data-value="free">Free</button>
             <button class="pill-btn" data-value="paid">Paid</button>
@@ -43,7 +42,7 @@
         </div>
 
         <div class="filter-section">
-          <label>System Kluczy</label>
+          <label>Key System</label>
           <div class="filter-group" data-filter="keysystem">
             <button class="pill-btn" data-value="keyless">Keyless</button>
             <button class="pill-btn" data-value="keysystem">Key System</button>
@@ -51,7 +50,7 @@
         </div>
 
         <div class="filter-section">
-          <label>Platforma</label>
+          <label>Platform</label>
           <div class="platform-grid" data-filter="platform">
             <button class="platform-btn" data-value="Windows">
               <span class="icon">🪟</span> Windows
@@ -69,7 +68,7 @@
         </div>
 
         <div class="filter-section">
-          <label>Typ</label>
+          <label>Type</label>
           <div class="filter-group" data-filter="type">
             <button class="pill-btn" data-value="internal">Internal</button>
             <button class="pill-btn" data-value="external">External</button>
@@ -77,7 +76,7 @@
         </div>
 
         <div class="filter-section">
-          <label>Detekcja</label>
+          <label>Detection</label>
           <div class="filter-group" data-filter="detection">
             <button class="pill-btn" data-value="Undetected">Undetected</button>
             <button class="pill-btn" data-value="Detected">Detected</button>
@@ -89,7 +88,7 @@
           <label>Status</label>
           <div class="filter-group" data-filter="status">
             <button class="pill-btn" data-value="updated">Updated</button>
-            <button class="pill-btn" data-value="outdated">Not Updated</button>
+            <button class="pill-btn" data-value="outdated">Outdated</button>
           </div>
         </div>
       </aside>
@@ -98,9 +97,9 @@
         <div class="search-container">
           <div class="search-wrapper">
             <span class="search-icon">🔍</span>
-            <input type="text" id="executor-search" placeholder="Szukaj executora po nazwie..." autocomplete="off">
+            <input type="text" id="executor-search" placeholder="Search executors..." autocomplete="off">
           </div>
-          <div id="results-count" class="results-count">Znaleziono: 12 executorów</div>
+          <div id="results-count" class="results-count">Found: 0 executors</div>
         </div>
 
         <div id="executors-container" class="executors-grid">

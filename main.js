@@ -28,11 +28,11 @@ function showToast(message) {
 
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text).then(() => {
-    showToast('Link skopiowany!');
+    showToast('Link copied!');
   });
 }
 
-// Funkcja parsująca dane z pliku JSON na format aplikacji
+// Data loading and parsing
 async function loadData() {
   try {
     const response = await fetch('./data.json');
@@ -58,8 +58,8 @@ async function loadData() {
 
     renderExecutors();
   } catch (error) {
-    console.error('Błąd podczas ładowania danych:', error);
-    showToast('Błąd ładowania pliku JSON!');
+    console.error('Error loading data:', error);
+    showToast('Error loading JSON data!');
   }
 }
 
@@ -94,7 +94,7 @@ function renderExecutors() {
     return 0;
   });
 
-  resultsCount.textContent = `Znaleziono: ${filtered.length} ${filtered.length === 1 ? 'executora' : 'executorów'}`;
+  resultsCount.textContent = `Found: ${filtered.length} ${filtered.length === 1 ? 'executor' : 'executors'}`;
 
   filtered.forEach((ex, index) => {
     const card = document.createElement('div');
@@ -113,7 +113,7 @@ function renderExecutors() {
       </div>
 
       <div class="status-badges">
-        <span class="badge ${ex.updated ? 'updated' : 'outdated'}">${ex.updated ? 'Zaktualizowany' : 'Brak Aktualizacji'}</span>
+        <span class="badge ${ex.updated ? 'updated' : 'outdated'}">${ex.updated ? 'Updated' : 'Not Updated'}</span>
         <span class="badge ${ex.detection.toLowerCase()}">${ex.detection}</span>
       </div>
 
@@ -142,8 +142,8 @@ function renderExecutors() {
       </div>
 
       <div class="card-actions">
-        <a href="${ex.link}" target="_blank" class="card-link">Odwiedź Stronę</a>
-        <button class="copy-btn" title="Kopiuj link">📋</button>
+        <a href="${ex.link}" target="_blank" class="card-link">Visit Website</a>
+        <button class="copy-btn" title="Copy Link">📋</button>
       </div>
     `;
 
@@ -156,7 +156,7 @@ function renderExecutors() {
   });
 
   if (filtered.length === 0) {
-    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-muted);">Nie znaleziono executorów spełniających wybrane kryteria.</div>`;
+    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 4rem; color: var(--text-muted);">No executors found matching your criteria.</div>`;
   }
 }
 
@@ -197,5 +197,4 @@ document.getElementById('clear-all').addEventListener('click', () => {
   renderExecutors();
 });
 
-// Start
 loadData();
